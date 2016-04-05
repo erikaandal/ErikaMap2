@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vs</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+      #map {
+        display:block;
+        height: 1000px;
+        width: 1000px;
+        margin: 40px;
+      }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        var mapOptions = {
+          zoom: 15,
+          center: new google.maps.LatLng(40.7090868,-74.0902451),
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        var positions = [
+                  {
+                    'title':'my elementary school',
+                    'map': new google.maps.LatLng(40.7090868,-74.0902451)
+                  },
+                  {
+                    'title':'our home',
+                    'map':new google.maps.LatLng(40.7080953,-74.0959176)
+                  },
+                  {
+                    'title':'my high school',
+                    'map': new google.maps.LatLng(40.7103358,-74.084141)
+                  },
+                  {
+                    'title':'my brothers high school',
+                    'map': new google.maps.LatLng(40.723018,-74.0745408)
+                  },
+                  {
+                    'title':'my brothers elementary school',
+                    'map': new google.maps.LatLng(40.7014203,-74.0991244)
+                  }
+                ];
+
+            draw('map', mapOptions, positions);
+            });
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas">
+      <section id="map"> </section>
+    </div>
+
+  </body>
+</html>
